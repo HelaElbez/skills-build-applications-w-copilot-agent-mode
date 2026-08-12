@@ -13,6 +13,8 @@ mongoose
     process.exit(1);
   });
 
-db.on('error', console.error.bind(console, 'connection error:'));
+db.on('error', (error) => {
+  console.error('MongoDB connection error:', error);
+});
 
 export default db;
